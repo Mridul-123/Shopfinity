@@ -1,0 +1,6 @@
+﻿(function (d, t) {
+	t = d.createElement('script');
+	t.setAttribute('src', 'https://embed.dyntube.com/v1.0/dyntube-1.2.0-v28.js' );
+	t.setAttribute('charset', 'utf-8');
+	d.getElementsByTagName('head')[0].appendChild(t);
+})(document);

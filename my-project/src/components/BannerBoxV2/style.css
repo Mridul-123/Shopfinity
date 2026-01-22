@@ -1,0 +1,9 @@
+.bannerBoxV2 {      
+    height: 210px;
+}
+
+.bannerBoxV2 span {
+    color: #ff5252;
+}
+
+.bannerBoxV2 a{ text-decoration: underline !important;}
