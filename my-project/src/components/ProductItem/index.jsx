@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { use, useContext } from 'react'
 
 import './style.css'
 import { Link } from 'react-router-dom'
@@ -7,9 +7,13 @@ import Button from '@mui/material/Button';
 import { FaRegHeart } from "react-icons/fa";
 import { IoGitCompareOutline } from "react-icons/io5";
 import { MdZoomOutMap } from "react-icons/md";
+import { MyContext } from '../../App';
 
 
 const ProductItem = () => {
+
+    const context = useContext(MyContext);
+
     return (
         <div className='productItem shadow-lg rounded-md overflow-hidden border-1 border-[rgba(0,0,0,0.1)]'>
             <div className='group imageWrapper w-[100%]  overflow-hidden rounded-md relative'>
@@ -23,7 +27,7 @@ const ProductItem = () => {
                 <span className='discount flex items-center absolute top-[10px] left-[10px] z-50 bg-[#ff5252] text-white rounded-lg p-2 text-[12px] font-[500]'>10%</span>
 
                 <div className='actions absolute top-[-200px] right-[5px] flex items-center gap-2 z-50 flex-col w-[50px] group-hover:top-[15px] transition-all duration-300 opacity-0 group-hover:opacity-100'>
-                    <Button className='!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white text-black hover:!bg-[#ff5252] hover:text-white group'> <MdZoomOutMap className='text-[18px] !text-black group-hover:text-white hover:!text-white' /></Button>
+                    <Button className='!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white text-black hover:!bg-[#ff5252] hover:text-white group' onClick={() => context.setOpenProductDetailsModal(true)}> <MdZoomOutMap className='text-[18px] !text-black group-hover:text-white hover:!text-white'/></Button>
                     <Button className='!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white text-black hover:!bg-[#ff5252] hover:text-white group'> <IoGitCompareOutline className='text-[18px] !text-black group-hover:text-white hover:!text-white' /></Button>
                     <Button className='!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white text-black hover:!bg-[#ff5252] hover:text-white group'> <FaRegHeart className='text-[18px] !text-black group-hover:text-white hover:!text-white' /></Button>
                 </div>

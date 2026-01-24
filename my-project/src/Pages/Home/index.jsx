@@ -27,8 +27,8 @@ const Home = () => {
   return (
     <>
       <div>
-        {/* <HomeSlider /> */}
-        <section className='py-6'>
+        <HomeSlider />
+        {/* <section className='py-6'>
           <div className='container flex gap-5'>
             <div className='part1 w-[75%]'>
               <HomeBannerV2 />
@@ -39,7 +39,7 @@ const Home = () => {
               <BannerBoxV2 info = 'right' image = {'https://serviceapi.spicezgold.com/download/1760160666204_1737020916820_New_Project_52.jpg'}/>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <HomeCatSlider />
 

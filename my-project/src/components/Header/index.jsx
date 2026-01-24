@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Search from './../Search/index';
 import Badge from '@mui/material/Badge';
@@ -9,6 +9,7 @@ import { IoGitCompareOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import Tooltip from '@mui/material/Tooltip';
 import Navigation from './Navigation';
+import { MyContext } from '../../App';
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -21,6 +22,9 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 const Header = () => {
+
+    const context = useContext(MyContext)
+
     return (
         <header className='bg-white'>
             <div className="top-strip py-2 h-10 border-b-[1px]" >
@@ -62,7 +66,7 @@ const Header = () => {
                             </li>
                             <li>
                                 <Tooltip title="Compare"> 
-                                <IconButton aria-label="cart">
+                                <IconButton aria-label="cart" >
                                     <StyledBadge badgeContent={4} color="secondary">
                                         <IoGitCompareOutline />
                                     </StyledBadge>
@@ -82,7 +86,7 @@ const Header = () => {
                             </li>
                             <li>
                                 <Tooltip title="Cart">
-                                <IconButton aria-label="cart">
+                                <IconButton aria-label="cart" onClick={() =>context.setOpenCartPanel(true)}>
                                     <StyledBadge badgeContent={4} color="secondary">
                                         <MdOutlineShoppingCart />
                                     </StyledBadge>

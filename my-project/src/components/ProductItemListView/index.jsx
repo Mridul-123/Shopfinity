@@ -8,16 +8,21 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoGitCompareOutline } from "react-icons/io5";
 import { MdZoomOutMap } from "react-icons/md";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { MyContext } from '../../App';
+import { useContext } from 'react';
 
 
 
 const ProductItem = () => {
+
+    const context = useContext(MyContext);
+
     return (
-        <div className='productItem shadow-lg rounded-md overflow-hidden border-1 border-[rgba(0,0,0,0.1)] flex items-center'>
+        <div className='productItem shadow-lg rounded-md overflow-hidden border-1 border-[rgba(0,0,0,0.1)] flex items-center pl-3'>
             <div className='group imageWrapper w-[25%]  overflow-hidden rounded-md relative'>
 
                 <Link to='/'>
-                    <div className='img h-[220px] overflow-hidden '>
+                    <div className='img h-[220px] overflow-hidden'>
                         <img src="https://api.spicezgold.com/download/file_1734529297929_fiorra-women-s-teapot-blue-pure-cotton-a-line-kurta-with-sharara-and-dupatta-product-images-rvo9n8udfg-0-202307260626.jpg" className='w-full' />
                         <img src="https://api.spicezgold.com/download/file_1734529297930_fiorra-women-s-teapot-blue-pure-cotton-a-line-kurta-with-sharara-and-dupatta-product-images-rvo9n8udfg-1-202307260626.jpg" className='w-full transition-all duration-300 absolute top-0 left-0 opacity-0 group-hover:opacity-100 group-hover:scale-105' />
                     </div>
@@ -25,7 +30,7 @@ const ProductItem = () => {
                 <span className='discount flex items-center absolute top-[10px] left-[10px] z-50 bg-[#ff5252] text-white rounded-lg p-2 text-[12px] font-[500]'>10%</span>
 
                 <div className='actions absolute top-[-200px] right-[5px] flex items-center gap-2 z-50 flex-col w-[50px] group-hover:top-[15px] transition-all duration-300 opacity-0 group-hover:opacity-100'>
-                    <Button className='!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white text-black hover:!bg-[#ff5252] hover:text-white group'> <MdZoomOutMap className='text-[18px] !text-black group-hover:text-white hover:!text-white' /></Button>
+                    <Button className='!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white text-black hover:!bg-[#ff5252] hover:text-white group' onClick={() => context.setOpenProductDetailsModal(true)}> <MdZoomOutMap className='text-[18px] !text-black group-hover:text-white hover:!text-white' /></Button>
                     <Button className='!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white text-black hover:!bg-[#ff5252] hover:text-white group'> <IoGitCompareOutline className='text-[18px] !text-black group-hover:text-white hover:!text-white' /></Button>
                     <Button className='!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white text-black hover:!bg-[#ff5252] hover:text-white group'> <FaRegHeart className='text-[18px] !text-black group-hover:text-white hover:!text-white' /></Button>
                 </div>

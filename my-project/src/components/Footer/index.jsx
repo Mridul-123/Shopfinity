@@ -11,18 +11,22 @@ import { FaFacebookF } from "react-icons/fa";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { FaPinterestP } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-
-
-
-
 import Button from '@mui/material/Button';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import Drawer from '@mui/material/Drawer';
+import CartPanel from '../CartPanel';
+import { MyContext } from '../../App';
+import { useContext } from 'react';
+import { IoCloseSharp } from "react-icons/io5";
 
 
 
 const Footer = () => {
+
+    const context = useContext(MyContext)
+
     return (
         <>
             <footer className='py-6 bg-white'>
@@ -148,18 +152,27 @@ const Footer = () => {
                         <li className='list-none'><Link to='/' target='_blank' className='w-[35px] h-[35px] rounded-full border border-[rgba(0,0,0,0.1)] flex items-center justify-center group hover:bg-[#ff5252] transition-all'><FaPinterestP className='text-[15px] group-hover:text-white' /></Link></li>
                         <li className='list-none'><Link to='/' target='_blank' className='w-[35px] h-[35px] rounded-full border border-[rgba(0,0,0,0.1)] flex items-center justify-center group hover:bg-[#ff5252] transition-all'><AiOutlineYoutube className='text-[15px] group-hover:text-white' /></Link></li>
                     </ul>
-                <p className='text-center text-[13px] mb-0'>© 2024 - Ecommerce Template</p>
+                    <p className='text-center text-[13px] mb-0'>© 2024 - Ecommerce Template</p>
 
 
-                <div className='flex items-center'> 
-                    <img src="https://ecommerce-frontend-view.netlify.app/carte_bleue.png" alt="" />
-                    <img src="https://ecommerce-frontend-view.netlify.app/visa.png" alt="" />
-                    <img src="https://ecommerce-frontend-view.netlify.app/master_card.png" alt="" />
-                    <img src="https://ecommerce-frontend-view.netlify.app/american_express.png" alt="" />
-                    <img src="https://ecommerce-frontend-view.netlify.app/paypal.png" alt="" />
-                </div>
+                    <div className='flex items-center'>
+                        <img src="https://ecommerce-frontend-view.netlify.app/carte_bleue.png" alt="" />
+                        <img src="https://ecommerce-frontend-view.netlify.app/visa.png" alt="" />
+                        <img src="https://ecommerce-frontend-view.netlify.app/master_card.png" alt="" />
+                        <img src="https://ecommerce-frontend-view.netlify.app/american_express.png" alt="" />
+                        <img src="https://ecommerce-frontend-view.netlify.app/paypal.png" alt="" />
+                    </div>
                 </div>
             </div>
+
+            {/* Cart Panel  */}
+            <Drawer open={context.openCartPanel} onClose={context.toggleCartPanel(false)} anchor={'right'} className='cartPanel'>
+                <div className='flex items-center justify-between py-3 px-4 gap-3 border-b border-[rgba(0,0,0,0.1)]'>
+                    <h4>Shopping Cart(1)</h4>
+                    <IoCloseSharp className='font[20px] cursor-pointer' onClick={context.toggleCartPanel(false)} />
+                </div>
+                <CartPanel />
+            </Drawer>
         </>
     )
 }
