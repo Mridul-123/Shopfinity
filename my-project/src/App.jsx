@@ -16,6 +16,11 @@ import DialogContent from '@mui/material/DialogContent';
 import ProductZoom from './components/ProductZoom';
 import ProductDetailsComponent from './components/ProductDetails';
 import { IoCloseSharp } from "react-icons/io5";
+import CartPage from './Pages/Cart';
+import Verify from './Pages/Verify';
+import toast, { Toaster } from 'react-hot-toast';
+import ForgotPassword from './Pages/ForgotPassword';
+import Checkout from './Pages/Checkout';
 
 
 const MyContext = createContext();
@@ -35,10 +40,19 @@ function App() {
     setOpenCartPanel(newOpen)
   }
 
-  const values = {
-    setOpenProductDetailsModal, setOpenCartPanel , openCartPanel, toggleCartPanel
+  const openAlertBox =(status , msg)=> {
+    if(status === 'success'){
+      toast.success(msg)
+    }
+    if(status === 'error'){
+      toast.error(msg)
+    }
+
   }
 
+  const values = {
+    setOpenProductDetailsModal, setOpenCartPanel , openCartPanel, toggleCartPanel,openAlertBox
+  }
 
   return (
     <>
@@ -51,10 +65,16 @@ function App() {
             <Route path={"/product-details/:id"} element={<ProductDetails />} />
             <Route path={"/login"} exact={true} element={<Login />} />
             <Route path={"/register"} exact={true} element={<Register />} />
+            <Route path={"/cart"} exact={true} element={<CartPage />} />
+            <Route path={"/verify"} exact={true} element={<Verify />} />
+            <Route path={"/forgot-password"} exact={true} element={<ForgotPassword />} />
+            <Route path={"/checkout"} exact={true} element={<Checkout />} />
           </Routes>
           <Footer />
         </MyContext.Provider>
       </BrowserRouter>
+
+      <Toaster/>
 
       <Dialog
         open={openProductDetailsModal}

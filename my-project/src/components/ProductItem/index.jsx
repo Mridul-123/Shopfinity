@@ -38,8 +38,8 @@ const ProductItem = () => {
                 <Rating name="size-small" defaultValue={4} size="small" readOnly />
 
                 <div className='flex items-center mt-2 gap-2'>
-                    <span className='oldPrice line-through text-gray-500 text-[15px] font-[500]'>%58.00</span>
-                    <span className='price text-[#ff5252] text-[15px] font-[600]'>%58.00</span>
+                    <span className='oldPrice line-through text-gray-500 text-[15px] font-[500]'>$68.00</span>
+                    <span className='price text-[#ff5252] text-[15px] font-[600]'>$58.00</span>
                 </div>
             </div>
         </div>
