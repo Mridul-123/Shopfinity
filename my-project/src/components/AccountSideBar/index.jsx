@@ -18,9 +18,9 @@ const AccountSideBar = () => {
                         <input type='file' className='absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer' />
                     </div>
                 </div>
-                <h3 className='pt-2 '>Rajesh Sharma</h3>
+                <h3 className='pt-2 '>Mridul Rawat</h3>
 
-                <h6 className='text-[13px] font-[500]'>rajesh321@gmail.com</h6>
+                <h6 className='text-[13px] font-[500]'>mridul321@gmail.com</h6>
             </div>
 
 

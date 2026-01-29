@@ -13,7 +13,7 @@ const MyList = () => {
                     <AccountSideBar/>
                 </div>
 
-                <div className='col2 w-70%]'>
+                <div className='col2 w-[70%]'>
                     <div className='shadow-md rounded-md bg-white'>
                         <div className='py-2 px-3 border-b border-[rgba(0,0,0,0.1)]'>
                             <h2>My List</h2>
